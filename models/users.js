@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
                 isUrl: true
             }
         },
-        user_rank: {
+        user_type: {
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: "user"
@@ -65,6 +65,7 @@ module.exports = function(sequelize, DataTypes) {
       };
       // Hooks are automatic methods that run during various phases of the User Model lifecycle
       // after a password is validated (on create or update), automatically hash password
+      // the 'afterValidate' hook allows for an 'update profile' feature
       Users.hook("afterValidate", function(user) {
         user.user_pw = bcrypt.hashSync(user.user_pw, bcrypt.genSaltSync(10), null);
       });
