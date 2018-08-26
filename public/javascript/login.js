@@ -103,6 +103,7 @@ $(document).ready(function () {
   function hideLoginErrorDivs() {
     $(loginEmailError).hide();
     $(loginPswdError).hide();
+    // $(loginError).clear();
   }
 
 });

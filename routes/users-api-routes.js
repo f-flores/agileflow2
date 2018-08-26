@@ -77,11 +77,11 @@ module.exports = function(app) {
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     console.log("logged in req.user id: " + req.user.id);
-    // on successful login, route user is sent to is based on user_rank
-    if (req.user.user_rank === "user") {
+    // on successful login, route user is sent to is based on user_type
+    if (req.user.user_type === "user") {
       console.log("normal user has signed in...");
       res.redirect("/");
-    } else if (req.user.user_rank === "Admin") {
+    } else if (req.user.user_type === "Admin") {
       console.log("Administrator user has signed in...");
       res.redirect("/admin");
     }
@@ -174,7 +174,7 @@ module.exports = function(app) {
               user_photo: result.secure_url
               // creating following lines to check admin functionality
               // ,
-              // user_rank: "Admin"
+              // user_type: "Admin"
             }).then(function () {
               res.json(true);
               // res.json("/");
@@ -232,7 +232,7 @@ module.exports = function(app) {
           id: req.user.id,
           user_name: req.user.user_name,
           photo: dbUser.user_photo,
-          rank: req.user.user_rank
+          rank: req.user.user_type
         });
       });     
     }

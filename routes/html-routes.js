@@ -182,9 +182,9 @@ module.exports = function(app) {
 
     // first check to see if req.user is not empty
     if (req.user) {
-      console.log("user rank: " + req.user.user_rank);
+      console.log("user rank: " + req.user.user_type);
       // next verify that user is an 'Admin'
-      if (req.user.user_rank === "Admin") {
+      if (req.user.user_type === "Admin") {
         db.Topics.findAll({"where": {"topic_state": "open"}, "order": [["created_at", "DESC"]]}).
         then(function (openData) {
           if (!openData) res.status(404).end();

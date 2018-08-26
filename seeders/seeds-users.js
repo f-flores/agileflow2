@@ -13,7 +13,7 @@ module.exports = {
         last_name: "Lastname",
         email: "sigma_test@example.com",
         user_pw: "1234567",
-        user_rank: "Admin",
+        user_type: "Admin",
         user_votes: 10,
         created_at: new Date(),
         updated_at: new Date()
@@ -24,7 +24,7 @@ module.exports = {
         last_name: "One",
         email: "user_one@example.com",
         user_pw: "1234567",
-        user_rank: "User",
+        user_type: "User",
         user_votes: 7,
         created_at: new Date(),
         updated_at: new Date()
@@ -35,7 +35,7 @@ module.exports = {
         last_name: "Two",
         email: "user_two@example.com",
         user_pw: "1234567",
-        user_rank: "User",
+        user_type: "User",
         user_votes: 3,
         created_at: new Date(),
         updated_at: new Date()
@@ -46,7 +46,7 @@ module.exports = {
         last_name: "Three",
         email: "user_three@example.com",
         user_pw: "1234567",
-        user_rank: "User",
+        user_type: "User",
         user_votes: 0,
         created_at: new Date(),
         updated_at: new Date()
