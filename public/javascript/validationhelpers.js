@@ -21,7 +21,7 @@
   // -------------------------------------------------------------------------------------
   // isEmptyObject() returns true if object is empty, false otherwise
   //
-  isEmptyObject = function(obj) {
+  isEmptyObject = function(obj){
     return Object.getOwnPropertyNames(obj).length === 0 &&
     Object.getOwnPropertySymbols(obj).length === 0 &&
     Object.getPrototypeOf(obj) === Object.prototype;
